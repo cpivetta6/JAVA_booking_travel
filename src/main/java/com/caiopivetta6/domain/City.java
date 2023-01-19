@@ -13,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,10 +33,13 @@ public class City implements Serializable {
 	@JoinColumn(name = "state_id")
 	private State state;
 	
+	@OneToMany(mappedBy = "city")
 	private List<Hotel> hotels = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "city")
 	private List<Ristorant> ristorants = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "city")
 	private List<TravelPack> travelPacks = new ArrayList<>();
 	
 	public City() {
