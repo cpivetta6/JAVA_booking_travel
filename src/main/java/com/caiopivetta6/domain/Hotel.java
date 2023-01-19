@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,10 +32,12 @@ public class Hotel implements Serializable{
 	private String name;
 	private double dailyPrice;
 	
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "city")
 	private City city;
 	
+	@JsonBackReference
 	@OneToMany(mappedBy = "hotel")
 	private List<TravelPack> travelPack = new ArrayList<>();
 	

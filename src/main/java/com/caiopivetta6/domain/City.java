@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Entity;
@@ -33,12 +34,15 @@ public class City implements Serializable {
 	@JoinColumn(name = "state_id")
 	private State state;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "city")
 	private List<Hotel> hotels = new ArrayList<>();
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "city")
 	private List<Ristorant> ristorants = new ArrayList<>();
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "city")
 	private List<TravelPack> travelPacks = new ArrayList<>();
 	

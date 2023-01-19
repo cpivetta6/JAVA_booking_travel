@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,14 +30,17 @@ public class TravelPack implements Serializable {
 	private Instant date;
 	private Integer days;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "city_id")
 	private City city;
 	
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "hotel_id")
 	private Hotel hotel;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "ristorant_id")
 	private Ristorant ristorant;
