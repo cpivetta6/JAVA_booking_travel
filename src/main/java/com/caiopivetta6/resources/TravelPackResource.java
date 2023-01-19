@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.caiopivetta6.domain.TravelPack;
-import com.caiopivetta6.service.TravelPackService;
+import com.caiopivetta6.services.TravelPackService;
 
 @RestController
 @RequestMapping(value = "/rent")

@@ -2,12 +2,12 @@ package com.caiopivetta6.services;
 
 import java.util.Optional;
 
-import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.caiopivetta6.domain.TravelPack;
 import com.caiopivetta6.repositories.TravelPackRepository;
+import com.caiopivetta6.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class TravelPackService {
