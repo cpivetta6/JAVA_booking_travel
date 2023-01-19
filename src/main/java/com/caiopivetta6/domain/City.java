@@ -1,6 +1,8 @@
 package com.caiopivetta6.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -30,6 +32,12 @@ public class City implements Serializable {
 	@JoinColumn(name = "state_id")
 	private State state;
 	
+	private List<Hotel> hotels = new ArrayList<>();
+	
+	private List<Ristorant> ristorants = new ArrayList<>();
+	
+	private List<TravelPack> travelPacks = new ArrayList<>();
+	
 	public City() {
 		
 	}
@@ -39,6 +47,33 @@ public class City implements Serializable {
 		this.id = id;
 		this.name = name;
 		this.state = state;
+	}
+	
+	
+	
+	
+	public List<Ristorant> getRistorants() {
+		return ristorants;
+	}
+
+	public void setRistorants(List<Ristorant> ristorants) {
+		this.ristorants = ristorants;
+	}
+
+	public List<TravelPack> getTravelPacks() {
+		return travelPacks;
+	}
+
+	public void setTravelPacks(List<TravelPack> travelPacks) {
+		this.travelPacks = travelPacks;
+	}
+
+	public List<Hotel> getHotels() {
+		return hotels;
+	}
+
+	public void setHotels(List<Hotel> hotels) {
+		this.hotels = hotels;
 	}
 
 	public Integer getId() {

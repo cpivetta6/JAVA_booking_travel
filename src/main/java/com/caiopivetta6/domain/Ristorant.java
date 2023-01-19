@@ -1,6 +1,8 @@
 package com.caiopivetta6.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Ristorant implements Serializable {
@@ -12,6 +14,10 @@ public class Ristorant implements Serializable {
 	private String name;
 	private double priceMeal;
 	
+	private City city;
+	
+	private List<TravelPack> travelPacks = new ArrayList<>();
+	
 	public Ristorant() {
 		
 	}
@@ -21,6 +27,25 @@ public class Ristorant implements Serializable {
 		this.id = id;
 		this.name = name;
 		this.priceMeal = priceMeal;
+	}
+	
+
+	
+
+	public List<TravelPack> getTravelPacks() {
+		return travelPacks;
+	}
+
+	public void setTravelPacks(List<TravelPack> travelPacks) {
+		this.travelPacks = travelPacks;
+	}
+
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
 	}
 
 	public Integer getId() {

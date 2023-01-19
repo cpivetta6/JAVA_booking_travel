@@ -12,6 +12,12 @@ public class TravelPack implements Serializable {
 	private Integer id;
 	private Instant date;
 	private Integer days;
+	
+	private City city;
+	
+	private Hotel hotel;
+	
+	private Ristorant ristorant;
 
 	public TravelPack() {
 		
@@ -22,6 +28,32 @@ public class TravelPack implements Serializable {
 		this.id = id;
 		this.date = date;
 		this.days = days;
+	}
+	
+	
+
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
+
+	public Ristorant getRistorant() {
+		return ristorant;
+	}
+
+	public void setRistorant(Ristorant ristorant) {
+		this.ristorant = ristorant;
 	}
 
 	public Integer getId() {
