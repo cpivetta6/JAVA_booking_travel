@@ -11,7 +11,7 @@ import com.caiopivetta6.domain.TravelPack;
 import com.caiopivetta6.services.TravelPackService;
 
 @RestController
-@RequestMapping(value = "/rent")
+@RequestMapping(value = "/travelpack")
 public class TravelPackResource {
 	
 	@Autowired
